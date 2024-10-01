@@ -1,5 +1,5 @@
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js';
-import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js";
+import { initializeApp } from './firebase-app.js';
+import { getDatabase, ref, onValue } from "./firebase-database.js";
 
 var token, userId;
 
@@ -52,5 +52,20 @@ function formatText(data) {
 
 function populateCards(cardData) {
   var textarea = document.getElementById("cardsList");
-  textarea.textContent = formatText(cardData);
+  var text = formatText(cardData);
+  textarea.textContent = text;
+  replacePurchaseLink(text);
+}
+
+function getMassEntryUrl(cardsListText) {
+  var replacedText = cardsListText.replace('%0A', '||');
+  console.log(replacedText);
+  var dynamicURL = "https://www.tcgplayer.com/massentry?c=" + encodeURIComponent(replacedText) + "&productline=Magic";
+  return dynamicURL.replace(new RegExp('%0A', 'g'), '||');
+}
+
+function replacePurchaseLink(cardsListText) {
+  var el = document.getElementById('purchaseLink');
+  var url = getMassEntryUrl(cardsListText);
+  el.setAttribute('href', url);
 }
