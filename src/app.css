@@ -1,0 +1,22 @@
+html {
+    width: 100%;
+}
+
+body {
+    width: 100%;
+}
+
+.content {    
+    padding-left: 2em;
+    padding-right: 2em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.cardsList {
+    max-width: 60%;
+    resize: horizontal;
+    overflow: hidden;
+}
