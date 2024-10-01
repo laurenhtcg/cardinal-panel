@@ -36,7 +36,6 @@ const db = getDatabase(app);
 const cardsRef = ref(db, '/cards');
 onValue(cardsRef, (snapshot) => {
   const cardData = snapshot.val();
-  console.log(cardData);
   populateCards(cardData);
 });
 
@@ -59,7 +58,6 @@ function populateCards(cardData) {
 
 function getMassEntryUrl(cardsListText) {
   var replacedText = cardsListText.replace('%0A', '||');
-  console.log(replacedText);
   var dynamicURL = "https://www.tcgplayer.com/massentry?c=" + encodeURIComponent(replacedText) + "&productline=Magic";
   return dynamicURL.replace(new RegExp('%0A', 'g'), '||');
 }
