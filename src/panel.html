@@ -5,7 +5,7 @@
     <title>Cardinal</title>
     <link rel="stylesheet" href="app.css">
     <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
-    <script type="text/javascript" src="common.js" async></script>
+    <script type="module" src="viewer.js" async></script>
 </head>
 
 <body>
@@ -14,31 +14,6 @@
         <textarea id="cardsList" class="cardsList"></textarea>
         <a href="http://tcgplayer.com/massentry" target="_blank">Purchase</a>
     </div>
-    <script type="module">
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js';
-        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyAmjMt3UpXHT5arclAf_ecUwQ4I6UuL0Kc",
-            authDomain: "team-cardinal-hackathon2024.firebaseapp.com",
-            databaseURL: "https://team-cardinal-hackathon2024-default-rtdb.firebaseio.com",
-            projectId: "team-cardinal-hackathon2024",
-            storageBucket: "team-cardinal-hackathon2024.appspot.com",
-            messagingSenderId: "777745009356",
-            measurementId: "G-JWKVBE0HMJ"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getDatabase(app);
-        // Listen for changes in the '/cards' path in Realtime Database
-        const cardsRef = ref(db, '/cards');
-        onValue(cardsRef, (snapshot) => {
-            const cardData = snapshot.val();
-            console.log(cardData);
-            populateCards(cardData);
-        });
-    </script>
 </body>
 
 </html>
