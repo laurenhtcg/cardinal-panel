@@ -4,12 +4,13 @@
 <head>
     <title>Cardinal</title>
     <link rel="stylesheet" href="app.css">
-    <script type="text/javascript" src="app.js" async></script>
+    <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
+    <script type="text/javascript" src="common.js" async></script>
 </head>
 
 <body>
     <div class="content">
-        <h1>Cards</h1>
+        <b>Cards Played</b>
         <textarea id="cardsList" class="cardsList"></textarea>
         <a href="http://tcgplayer.com/massentry" target="_blank">Purchase</a>
     </div>
@@ -18,7 +19,7 @@
         import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js";
 
         const firebaseConfig = {
-            apiKey: "ENTER_KEY_HERE",
+            apiKey: "AIzaSyAmjMt3UpXHT5arclAf_ecUwQ4I6UuL0Kc",
             authDomain: "team-cardinal-hackathon2024.firebaseapp.com",
             databaseURL: "https://team-cardinal-hackathon2024-default-rtdb.firebaseio.com",
             projectId: "team-cardinal-hackathon2024",

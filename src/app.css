@@ -1,22 +1,21 @@
 html {
     width: 100%;
+    max-width: 100%;
 }
 
 body {
-    width: 100%;
+    max-width: 100%;
+    padding: 1em;
 }
 
 .content {    
-    padding-left: 2em;
-    padding-right: 2em;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     gap: 1em;
 }
 
 .cardsList {
-    max-width: 60%;
-    resize: horizontal;
-    overflow: hidden;
+    min-height: 160px;
+    min-width: 200px;
+    width: auto;
 }

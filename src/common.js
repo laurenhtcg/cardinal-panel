@@ -12,7 +12,4 @@ function formatText(data) {
 function populateCards(cardData) {
     var textarea = document.getElementById("cardsList");
     textarea.textContent = formatText(cardData);
-    
-    textarea.style.height = "auto";
-    textarea.style.height = (5 + textarea.scrollHeight) + "px";
 }
