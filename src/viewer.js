@@ -1,5 +1,5 @@
-import { initializeApp } from './firebase-app.js';
-import { getDatabase, ref, onValue } from "./firebase-database.js";
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js';
+import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js";
 
 var token, userId;
 
@@ -36,6 +36,7 @@ const db = getDatabase(app);
 const cardsRef = ref(db, '/cards');
 onValue(cardsRef, (snapshot) => {
   const cardData = snapshot.val();
+  console.log(cardData);
   populateCards(cardData);
 });
 
