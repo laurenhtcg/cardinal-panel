@@ -3,7 +3,9 @@ Hackathon - Cardinal front end panel
 
 # running
 
-in terminal:
+Install Node (with npm): https://nodejs.org/en/download/package-manager
+
+In terminal:
 
 ```
 cd src
